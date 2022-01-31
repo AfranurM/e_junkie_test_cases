@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class _4_PaySuccessfully {
+public class _4_PaySuccessfully_Demo_eBook {
 
     public static void main(String[] args) {
 
