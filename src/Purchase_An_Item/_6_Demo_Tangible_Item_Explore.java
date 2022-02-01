@@ -8,9 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -30,8 +27,6 @@ public class _6_Demo_Tangible_Item_Explore {
         driver.manage().window().maximize();
 
         driver.get("https://shopdemo.e-junkie.com/");
-
-        List<String> windowHandlesList = new ArrayList<>();
 
         String originalWindow = driver.getWindowHandle();
 
@@ -85,23 +80,8 @@ public class _6_Demo_Tangible_Item_Explore {
         WebElement zipCode = driver.findElement(By.cssSelector("input[class='Shipping-Section-Postcode']"));
         zipCode.sendKeys("98765");
 
-        WebElement payUsingPayPal = driver.findElement(By.cssSelector("button[class='Payment-Button Paypal']"));
+        WebElement payUsingPayPal = driver.findElement(By.xpath("//button[@class='Payment-Button Paypal']//span"));
         payUsingPayPal.click();
-
-        Set<String> windowHandles = driver.getWindowHandles();
-        for (String handle : windowHandles) {
-            if (!windowHandlesList.contains(handle))
-                windowHandlesList.add(handle);
-        }
-
-        driver.switchTo().window(windowHandlesList.get(1));
-
-        wait.until(ExpectedConditions.urlContains("paypal.com"));
-
-        if(driver.getCurrentUrl().contains("paypal.com"))
-            System.out.println("you have successfully been transferred to official PayPal page, please enter your email and password to complete the order!");
-        else
-            System.out.println("Please try again!!");
 
         driver.quit();
 
