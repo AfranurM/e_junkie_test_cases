@@ -24,7 +24,7 @@ public class _1_ValidateInvalidPromoCode {
 
         driver.get("https://shopdemo.e-junkie.com/");
 
-        WebElement addToCart_eBook = driver.findElement(By.xpath("//h4[text()='Demo eBook']/following-sibling::button"));
+        WebElement addToCart_eBook = driver.findElement(By.xpath("(//button[text()= ' Add To Cart'])[2]"));
         addToCart_eBook.click();
 
         WebElement iframe = driver.findElement(By.xpath("//iframe[@class='EJIframeV3 EJOverlayV3']"));
