@@ -45,7 +45,7 @@ public class _1_ValidateInvalidPromoCode {
         WebElement invalid = driver.findElement(By.xpath("//span[text()='Invalid promo code']"));
         String invalidText = invalid.getText();
 
-        if(invalid.getText().contains("Invalid promo code"))
+        if(invalidText.contains("Invalid promo code"))
             System.out.println("you have successfully get the \"" + invalidText + "\" message");
         else
             System.out.println("text is not matching with " + invalidText);

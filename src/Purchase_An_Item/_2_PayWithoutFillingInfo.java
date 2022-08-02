@@ -32,6 +32,8 @@ public class _2_PayWithoutFillingInfo {
         wait.until(ExpectedConditions.visibilityOf(payUsingDebitCard));
         payUsingDebitCard.click();
 
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame(iframe);
         WebElement payButton = driver.findElement(By.cssSelector("button[class='Pay-Button']"));
         wait.until(ExpectedConditions.invisibilityOf(payUsingDebitCard));
         payButton.click();
